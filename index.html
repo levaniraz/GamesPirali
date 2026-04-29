@@ -1,0 +1,101 @@
+<<<<<<< HEAD
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gamespirali-arcade</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nolo's Castle - Modular</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="gameContainer">
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- HUD -->
+    <div id="hud" class="ui-layer hidden">
+        <div class="bar-container">
+            <div class="hp-bar"><div id="hpFill" class="hp-fill"></div></div>
+            <span>HP</span>
+        </div>
+        <div class="bar-container">
+            <div class="cooldown-bar"><div id="swordFill" class="cooldown-fill"></div></div>
+            <span class="bar-label">ხმალი (SPACE)</span>
+        </div>
+        <div class="bar-container">
+            <div class="cooldown-bar"><div id="gunFill" class="cooldown-fill" style="background: cyan;"></div></div>
+            <span class="bar-label">თოფი (X)</span>
+        </div>
+        <div style="margin-left: auto; font-size: 20px;">
+            ტური: <span id="levelDisplay">1</span> | ქულა: <span id="scoreDisplay">0</span>
+        </div>
+        <button id="settingsBtn" class="small-btn">⚙️</button>
+    </div>
+
+    <!-- Main Menu -->
+    <div id="startScreen" class="menu-screen">
+        <h1>NOLO'S CASTLE</h1>
+        <input type="text" id="usernameInput" placeholder="შეიყვანე სახელი" maxlength="10">
+        
+        <div class="difficulty-selector">
+            <label>სირთულე:</label>
+            <select id="difficultySelect">
+                <option value="easy">მარტივი</option>
+                <option value="normal" selected>ნორმალური</option>
+                <option value="hard">რთული</option>
+            </select>
+        </div>
+
+        <button onclick="window.gameApp.startGame()">თამაშის დაწყება</button>
+        
+        <div id="leaderboard">
+            <h3>ლიდერბორდი</h3>
+            <div id="scoresList"></div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>პარამეტრები</h2>
+            <label>
+                <input type="checkbox" id="soundToggle" checked> ხმის ჩართვა
+            </label>
+            <br><br>
+            <button onclick="window.gameApp.toggleSettings()">დახურვა</button>
+        </div>
+    </div>
+
+    <!-- Game Over / Win Screen -->
+    <div id="endScreen" class="menu-screen hidden">
+        <h1 id="endTitle">GAME OVER</h1>
+        <p id="endScoreText"></p>
+        <button onclick="window.gameApp.resetGame()">მენიუში დაბრუნება</button>
+    </div>
+
+    <div class="controls-hint ui-layer hidden" id="controlsHint">
+        WASD - მოძრაობა<br>
+        SPACE - ხმალი<br>
+        X - თოფი
+    </div>
+</div>
+
+<!-- Audio Assets (Placeholder sounds using generated beeps in JS for simplicity, but structure is here) -->
+<script type="module" src="game.js"></script>
+</body>
+</html>
+>>>>>>> 297b5b8bbabcfaf6b93b2f68dbfe4ec13baf66b8

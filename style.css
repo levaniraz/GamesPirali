@@ -1,0 +1,160 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #222;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    user-select: none;
+}
+
+#gameContainer {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas {
+    background-color: #3a5f0b;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.ui-layer {
+    position: absolute;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+#hud {
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.bar-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.bar-label { font-size: 12px; font-weight: bold; }
+
+.cooldown-bar {
+    width: 150px;
+    height: 10px;
+    background: #444;
+    border: 1px solid #fff;
+    position: relative;
+}
+
+.cooldown-fill {
+    height: 100%;
+    background: #00ff00;
+    width: 100%;
+    transition: width 0.1s linear;
+}
+
+.hp-bar {
+    width: 200px;
+    height: 20px;
+    background: #444;
+    border: 2px solid #fff;
+}
+.hp-fill {
+    height: 100%;
+    background: #ff0000;
+    width: 100%;
+}
+
+.menu-screen {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    pointer-events: auto;
+    z-index: 10;
+}
+
+.modal {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background: #333;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid #ffd700;
+}
+
+h1 { font-size: 48px; margin-bottom: 10px; color: #ffd700; text-shadow: 2px 2px #000; }
+input, select { padding: 10px; font-size: 18px; margin: 10px; border-radius: 5px; border: none; }
+button {
+    padding: 10px 30px;
+    font-size: 20px;
+    background: #ffd700;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+button:hover { background: #ffcc00; }
+
+.small-btn {
+    padding: 5px 10px;
+    font-size: 16px;
+    margin: 0;
+    pointer-events: auto;
+}
+
+#leaderboard {
+    margin-top: 20px;
+    text-align: center;
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    min-width: 350px;
+}
+.score-row { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap: 10px;
+    width: 100%; 
+    margin: 5px 0; 
+    border-bottom: 1px solid #555; 
+    padding-bottom: 2px;
+    font-size: 14px;
+}
+.header-row { font-weight: bold; color: #ffd700; border-bottom: 2px solid #ffd700; }
+
+.hidden { display: none !important; }
+
+.controls-hint {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.5);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
